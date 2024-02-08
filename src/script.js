@@ -1,3 +1,4 @@
+const recordBtns = document.querySelectorAll('.record-btn');
 const recordBtnOne = document.querySelector('.record-btn--one');
 const recordBtnTwo = document.querySelector('.record-btn--two');
 const recordBtnThree = document.querySelector('.record-btn--three');
