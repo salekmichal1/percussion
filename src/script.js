@@ -8,6 +8,11 @@ const playBtnTwo = document.querySelector('.play-btn--two');
 const playBtnThree = document.querySelector('.play-btn--three');
 const playBtnFour = document.querySelector('.play-btn--four');
 
+const metronomeStart = document.querySelector('.metronome-start-btn');
+const metronomeStop = document.querySelector('.metronome-stop-btn');
+
+const tempoInp = document.querySelector('.tempo');
+
 document.addEventListener('keypress', onKeyPress);
 
 const KeyToSound = {
@@ -18,6 +23,21 @@ const KeyToSound = {
   t: document.querySelector('#sound5'),
   y: document.querySelector('#sound6'),
 };
+
+let tempoInterval;
+
+const startMetronome = function () {
+  tempoInterval = setInterval(function () {
+    playSound(KeyToSound.q);
+    console.log('x');
+  }, tempoInp.value * 1000);
+};
+
+metronomeStart.addEventListener('click', startMetronome);
+metronomeStop.addEventListener('click', function () {
+  clearInterval(tempoInterval);
+  console.log(tempoInterval);
+});
 
 let recordingStartTime0;
 let recordingStartTime1;
